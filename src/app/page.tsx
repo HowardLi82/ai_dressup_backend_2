@@ -1,5 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  return NextResponse.json({ message: "API 正常運行！" });
+}
 
 export default function Home() {
   return (

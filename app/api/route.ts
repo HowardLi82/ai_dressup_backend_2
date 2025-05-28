@@ -3,6 +3,10 @@ import { NextResponse } from "next/server";
 const allowedOrigin = "http://localhost:5173"; // ✅ 指定前端網址
 const cloudnary_id = process.env.CLOUDINARY_ID; 
 
+export async function GET() {
+  return NextResponse.json({ message: "API 正常運行！" });
+}
+
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 204,
