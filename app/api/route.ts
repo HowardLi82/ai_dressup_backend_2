@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const allowedOrigin = "https://ai-weather-dress-up.vercel.app/"; // ✅ 指定前端網址
+const allowedOrigin = "https://ai-weather-dress-up.vercel.app"; // ✅ 指定前端網址
 const cloudnary_id = process.env.CLOUDINARY_ID; 
 
 export async function GET() {
