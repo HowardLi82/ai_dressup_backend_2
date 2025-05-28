@@ -1,12 +1,24 @@
+"use client"
 import Image from "next/image";
 import styles from "./page.module.css";
 import { NextResponse } from "next/server";
+import { useEffect, useState } from "react";
 
 export async function GET() {
   return NextResponse.json({ message: "API 正常運行！" });
 }
 
 export default function Home() {
+
+  const [data, setData] = useState(null);
+  useEffect(() => {
+      fetch("/api") // 🔥 自動向 `/api` 發送請求
+      .then(res => res.json())
+      .then(setData)
+      .catch(error => console.error("載入 API 失敗:", error));
+
+  },[])
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
