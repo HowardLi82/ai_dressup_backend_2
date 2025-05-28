@@ -10,13 +10,14 @@ export async function GET() {
 
 export default function Home() {
 
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
+
   useEffect(() => {
       fetch("/api") // 🔥 自動向 `/api` 發送請求
       .then(res => res.json())
-      .then(setData)
+      // .then(setData)
       .catch(error => console.error("載入 API 失敗:", error));
-
+    
   },[])
 
   return (
